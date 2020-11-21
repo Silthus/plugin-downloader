@@ -7,7 +7,6 @@ buildscript {
 
 plugins {
     id 'com.github.johnrengelman.shadow' version '6.1.0'
-    id 'kr.entree.spigradle' version '2.2.3'
     id 'io.freefair.lombok' version '5.3.0'
     id 'java'
     id 'jacoco'
@@ -30,14 +29,6 @@ ext {
 
 group project.property("group")
 
-spigot {
-    name = project.property("pluginName")
-    authors = [project.property("author")]
-    apiVersion = project.property("apiVersion")
-    load = STARTUP
-    //    depends = ['']
-}
-
 compileJava {
     options.encoding = 'UTF-8'
     options.compilerArgs += ["-parameters"]
@@ -50,34 +41,29 @@ archivesBaseName = project.property("pluginName")
 repositories {
     mavenCentral()
     jcenter()
-    spigot()
     maven { url = 'https://jitpack.io' }
 }
 
 dependencies {
-    compileOnly spigot(mcVersion)
-
-    //Add dependencies here
-
-    //Test dependencies
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.+'
-    testImplementation "org.mockito:mockito-core:3.+"
-    testImplementation mockBukkit()
-    testImplementation 'org.assertj:assertj-core:3.+'
+    implementation 'com.custardsource.dybdob:java-diff-utils-copy:1.0.1'
+    implementation 'com.google.guava:guava:20.0'
+    implementation 'net.sf.jopt-simple:jopt-simple:4.9'
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:4.5.3.201708160445-r'
+    implementation 'org.slf4j:slf4j-jdk14:1.7.25'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.3.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.10.4'
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 }
 
 shadowJar {
     classifier = ''
-//    dependencies {
-//        include(dependency('co.aikar:acf-paper:0.5.0-SNAPSHOT'))
-//    }
-//    relocate 'co.aikar.commands', "${packageName}.acf"
-//    relocate 'co.aikar.locales', "${packageName}.locales"
 }
 
 tasks.build.dependsOn(shadowJar)
 tasks.publish.dependsOn(shadowJar)
-tasks.prepareSpigotPlugins.dependsOn(shadowJar)
 
 test {
     useJUnitPlatform()
@@ -90,6 +76,13 @@ test {
 processResources {
     project.properties.put("version", this.version)
     expand project.properties
+}
+
+tasks.withType(Javadoc) {
+    failOnError false
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }
 
 defaultTasks 'build'
