@@ -70,7 +70,7 @@ import java.util.zip.ZipFile;
 public class Builder
 {
 
-    public static final String LOG_FILE = "ToF-BuildTools.log.txt";
+    public static final String LOG_FILE = "PluginDownloader.log";
     public static final boolean IS_WINDOWS = System.getProperty( "os.name" ).startsWith( "Windows" );
     public static final File CWD = new File( "." );
     public static final File CONFIG = new File("plugins.yml");

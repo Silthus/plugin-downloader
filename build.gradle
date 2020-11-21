@@ -20,8 +20,8 @@ if (project.hasProperty("local_script")) {
     apply from: file(local_script + "/build.local.gradle")
 }
 
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 8
+targetCompatibility = 8
 
 ext {
     mcVersion = project.property("mcVersion")
@@ -35,6 +35,16 @@ compileJava {
     options.fork = true
     options.forkOptions.executable = 'javac'
 }
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'net.silthus.downloader.Bootstrap'
+        )
+    }
+}
+
 
 archivesBaseName = project.property("pluginName")
 
