@@ -1,6 +1,6 @@
-# Tales of Faldoria Build Tools
+# Plugin Downloader
 
-These `BuildTools` are mostly copied code from the [`Spigot BuildTools`](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/buildtools/). See the [license](LICENSE.md) for details.
+This `PluginDownloader` is mostly copied code from the [`Spigot BuildTools`](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/buildtools/). See the [license](LICENSE.md) for details.
 
 This project aims to fully automate the configuration and deployment of a full [Spigot](https://hub.spigotmc.org/) Minecraft server. It will download plugins and config of plugins based on a simple configuration file.
 
