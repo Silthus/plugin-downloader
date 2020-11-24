@@ -61,7 +61,7 @@ dependencies {
     implementation 'org.eclipse.jgit:org.eclipse.jgit:5.9.0.202009080501-r'
     implementation 'org.slf4j:slf4j-jdk14:1.7.25'
     implementation 'commons-io:commons-io:2.8.0'
-    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.3.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
     implementation 'org.apache.commons:commons-lang3:3.11'
