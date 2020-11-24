@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.custardsource.dybdob:java-diff-utils-copy:1.0.1'
+    implementation 'com.custardsource.dybdob:java-diff-utils-copy:1.0.5'
     implementation 'com.google.guava:guava:23.0'
     implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
     implementation 'org.eclipse.jgit:org.eclipse.jgit:5.9.0.202009080501-r'
