@@ -59,7 +59,7 @@ dependencies {
     implementation 'com.google.guava:guava:23.0'
     implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
     implementation 'org.eclipse.jgit:org.eclipse.jgit:5.11.1.202105131744-r'
-    implementation 'org.slf4j:slf4j-jdk14:1.7.31'
+    implementation 'org.slf4j:slf4j-jdk14:1.7.35'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.4'
