@@ -58,7 +58,7 @@ dependencies {
     implementation 'com.custardsource.dybdob:java-diff-utils-copy:1.0.5'
     implementation 'com.google.guava:guava:23.0'
     implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
-    implementation 'org.eclipse.jgit:org.eclipse.jgit:5.11.1.202105131744-r'
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:6.1.0.202203080745-r'
     implementation 'org.slf4j:slf4j-jdk14:1.7.31'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'com.google.code.gson:gson:2.9.0'
